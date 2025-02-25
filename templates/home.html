@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🔐 Steganography Tool</h1>
+        <p>Hide and retrieve secret messages inside images securely.</p>
+
+        <a href="{{ url_for('encrypt') }}" class="btn encrypt-btn">🔒 Go to Encryption</a>
+        <a href="{{ url_for('decrypt') }}" class="btn decrypt-btn">🔓 Go to Decryption</a>
+    </div>
+</body>
+</html>

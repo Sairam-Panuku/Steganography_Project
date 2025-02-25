@@ -1,7 +1,12 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -15,58 +20,48 @@ body {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
-/* Main Container */
+/* Main container with desktop-optimized size */
 .container {
-    width: 450px;
+    width: 900px;
+    height: 600px;
     background: rgba(255, 255, 255, 0.15);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* Title */
+/* Title Styling */
 .title {
-    font-size: 22px;
+    font-size: 32px;
     font-weight: bold;
-    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
 }
 
-/* Card Boxes */
-.card {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-}
-
-/* Form Inputs */
+/* Input fields */
 .input-box, .input-file {
     width: 100%;
-    padding: 8px;
-    margin: 6px 0;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
     border: none;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-.input-box:focus, .input-file:focus {
-    background: rgba(255, 255, 255, 0.8);
-    color: black;
+    font-size: 18px;
 }
 
 /* Buttons */
 .btn {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
+    padding: 14px;
+    font-size: 20px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-    margin-top: 8px;
     font-weight: bold;
     color: white;
+    margin-top: 15px;
+    transition: 0.3s ease-in-out;
 }
 
 .encrypt-btn {
@@ -78,30 +73,34 @@ body {
 }
 
 .btn:hover {
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
-/* Decrypted Message Box */
-.decrypted-message-box {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 15px;
+/* Flexbox Layout for Encryption & Decryption sections */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.decrypted-message-box h3 {
-    margin: 0;
-    color: #FFD700;
+/* Each section box */
+.card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
 }
 
-.decrypted-message-box p {
-    font-size: 16px;
+/* Alert Message Box */
+.alert-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.alert-message {
+    font-size: 18px;
     font-weight: bold;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-    .container {
-        width: 90%;
-    }
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🔒 Encrypt Image</h1>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert-box">
+                {% for message in messages %}
+                <p class="alert-message">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+
+        <form action="/encrypt" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required class="input-file"><br>
+            <input type="text" name="message" placeholder="Enter Secret Message" required class="input-box"><br>
+            <input type="password" name="passcode" placeholder="Enter Passcode" required class="input-box"><br>
+            <button type="submit" class="btn encrypt-btn">Encrypt & Download</button>
+        </form>
+
+        <a href="{{ url_for('home') }}" class="btn">🏠 Back to Home</a>
+    </div>
+</body>
+</html>
